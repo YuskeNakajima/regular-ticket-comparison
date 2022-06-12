@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/almond.css">
+    <link rel="stylesheet" href="./css/flatpickr.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>定期 - 切符 計算</title>
+</head>
+<body>
+<h1>定期 - 切符 比較</h1>
+
+<div class="l-stack-15">
+    <div>
+        <label class="u-font-black" for="start-date">開始（年月日）</label>
+        <div class="c-row"><input type="text" id="start-date"></div>
+    </div>
+    <div>
+        <label class="u-font-black" for="period">期間（〇ヶ月）</label>
+        <div class="c-row"><input type="number" min="1" max="6" id="period" value="3"></div>
+    </div>
+    <div>
+        <label class="u-font-black" for="end-date">終了（年月日）</label>
+        <div class="c-row"><input class="u-read-only" type="text" id="end-date" readonly></div>
+    </div>
+
+    <div>
+        <label class="u-font-black" for="ticket-price">片道料金</label>
+        <div class="c-row"><input type="number" min="1" id="ticket-price" value="242"></div>
+    </div>
+    <div>
+        <label class="u-font-black" for="regular-price">定期料金</label>
+        <div class="c-row"><input type="number" min="1" id="regular-price" value="24140"></div>
+    </div>
+
+    <div>
+        <label class="u-font-black">使用曜日</label>
+        <div id="day-of-week-checkbox-area" class="l-checkbox-area"></div>
+    </div>
+
+    <div>
+        <div class="c-row">
+            <button id="price-calc">計算</button>
+        </div>
+    </div>
+
+    <div id="result-area" class="u-is-close">
+        <h2>結果: </h2>
+        <div id="result" class="l-stack-10"></div>
+    </div>
+</div>
+
+
+<!--script area-->
+<script src="./js/moment.js"></script>
+<script src="./js/flatpickr.js"></script>
+<script src="./js/flatpickr.ja.js"></script>
+<script src="./js/constant.js"></script>
+<script src="./js/functions.js"></script>
+<script src="./js/index.js"></script>
+<!--script area-->
+</body>
+</html>

@@ -1,0 +1,243 @@
+:root {
+    --05: 0.5rem;
+    --10: 1rem;
+    --15: 1.5rem;
+    --20: 2rem;
+    --25: 2.5rem;
+    --30: 3rem;
+    --35: 3.5rem;
+
+    --color-gray-0: #999;
+    --color-gray-1: #aaa;
+    --color-gray-2: #bbb;
+    --color-gray-3: #ccc;
+    --color-gray-4: #ddd;
+    --color-gray-5: #eee;
+    --color-white-0: #fff;
+    --color-white-1: #fefefe;
+    --color-white-2: #fcfefc;
+    --color-white-3: #fafafa;
+    --color-white-4: #f5f5f5;
+    --color-white-5: #f0f0f0;
+    --danger: hsl(0, 100%, 70%);
+    --holiday: hsl(300, 100%, 50%);
+    --great: hsl(150, 50%, 40%);
+
+
+    /* box-shadow */
+    --z-depth-05: 0 2px 5px 0 rgba(0, 0, 0, 0.08), 0 1px 5px 0 rgba(0, 0, 0, 0.06);
+    --z-depth-10: 0 2px 5px 0 rgba(0, 0, 0, 0.1), 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+    --z-depth-20: 0 8px 17px 0 rgba(0, 0, 0, 0.12), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    --z-depth-30: 0 12px 15px 0 rgba(0, 0, 0, 0.14), 0 17px 50px 0 rgba(0, 0, 0, 0.12);
+    --z-depth-40: 0 16px 28px 0 rgba(0, 0, 0, 0.16), 0 25px 55px 0 rgba(0, 0, 0, 0.14);
+    --z-depth-50: 0 27px 24px 0 rgba(0, 0, 0, 0.18), 0 40px 77px 0 rgba(0, 0, 0, 0.16);
+    /* box-shadow */
+}
+
+/*要素*/
+/*input[type=text]:read-only {*/
+/*    background-color: var(--color-gray-0);*/
+/*    color: var(--color-white-5);*/
+/*}*/
+input[type=checkbox]:hover {
+    cursor: pointer;
+}
+
+label {
+    font-weight: 500;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+button {
+    text-transform: none;
+    box-shadow: var(--z-depth-10);
+    font-weight: 900;
+}
+
+button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/*要素*/
+
+.u-color-danger {
+    color: var(--danger);
+}
+
+.u-color-great {
+    color: var(--great);
+}
+
+.u-background-danger {
+    background-color: var(--danger);
+}
+
+.u-color-holiday {
+    color: var(--holiday);
+}
+
+.u-mt-10 {
+    margin-top: 1rem
+}
+
+.u-is-close {
+    display: none;
+}
+
+.u-read-only {
+    background-color: var(--color-gray-0);
+    color: var(--color-white-5);
+}
+
+.u-font-black {
+    font-weight: 900;
+}
+
+.u-text-align-left {
+    text-align: left !important;
+}
+
+.u-text-align-right {
+    text-align: right !important;
+}
+
+.u-text-align-center {
+    text-align: center !important;
+}
+
+.u-font-size-05 {
+    font-size: 0.5rem;
+}
+
+.u-font-size-06 {
+    font-size: 0.6rem;
+}
+
+.u-font-size-07 {
+    font-size: 0.7rem;
+}
+
+.u-font-size-08 {
+    font-size: 0.8rem;
+}
+
+.u-font-size-09 {
+    font-size: 0.9rem;
+}
+
+.u-font-size-10 {
+    font-size: 1.0rem;
+}
+
+.u-font-size-15 {
+    font-size: 1.5rem;
+}
+
+.u-font-size-20 {
+    font-size: 2.0rem;
+}
+
+.l-stack-05 > * + * {
+    margin-top: 0.5rem;
+}
+
+.l-stack-10 > * + * {
+    margin-top: 1rem;
+}
+
+.l-stack-15 > * + * {
+    margin-top: 1.5rem;
+}
+
+.l-stack-20 > * + * {
+    margin-top: 2rem;
+}
+
+.l-checkbox-area {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.l-checkbox-area__item > label {
+    margin-right: 0.5rem;
+}
+
+.l-api-response {
+    padding: var(--05);
+    border: 5px dashed black;
+    background-color: var(--color-white-0);
+}
+
+.c-description-area {
+    max-width: 100%;
+    padding: var(--10);
+    /*border: 3px solid var(--danger);*/
+    background-color: var(--color-white-1);
+    box-shadow: var(--z-depth-05);
+}
+
+.c-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 1rem;
+    row-gap: 0.1rem;
+}
+
+.c-input-button-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 1rem;
+}
+
+.c-button-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+}
+
+.c-checkbox-area {
+    max-width: 100%;
+    padding: var(--05);
+    border: 1px solid var(--color-gray-0);
+    background-color: var(--color-white-3);
+}
+
+.c-response-area {
+    padding: var(--05);
+    border: 5px solid var(--color-gray-0);
+    background-color: var(--color-white-5);
+}
+
+.c-sign-in-toggle-area {
+    padding: var(--10);
+    border: 5px solid var(--danger);
+    background-color: var(--color-white-5);
+}
+
+.c-danger-button {
+    background-color: var(--danger);
+}
+
+.c-danger-button:hover {
+    background-color: var(--danger);
+    opacity: 0.8;
+}
+
+.c-more-description {
+    margin-left: 1rem;
+}
+
+.c-more-description-area {
+    margin-top: 1rem;
+}
+
+.is-holiday {
+    background: hsl(0, 70%, 80%);
+}
