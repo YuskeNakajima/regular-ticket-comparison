@@ -272,3 +272,24 @@ const getLocalStorageToInputList = (inputList) => {
         item.value = localStorage.getItem(item.getAttribute('id'))
     }
 }
+
+/**
+ * URLにパラメータ付与
+ * @param {[HTMLInputElement]} inputList
+ */
+const setQueryParameters = (inputList) => {
+    const inputDict = {}
+    for (const item of inputList) inputDict[item.getAttribute('id')] = item.value
+    const urlParams = new URLSearchParams(inputDict)
+    history.pushState(null, null, `?${urlParams.toString()}`);
+}
+
+/**
+ * URLパラメータをLocal storageに保存
+ */
+const getQueryParametersToLocalStorage = () => {
+    const url = new URL(window.location.href)
+    const getParameters = url.searchParams
+    const getParametersDict = Object.fromEntries(getParameters.entries())
+    Object.keys(getParametersDict).forEach(item => localStorage.setItem(item, getParametersDict[item]))
+}

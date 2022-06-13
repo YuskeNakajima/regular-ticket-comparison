@@ -26,6 +26,7 @@
     priceCalc.addEventListener('click', () => {
         resultArea.removeAttribute('class')
         startToEndPeriodCalc(startDate, endDate, result, ticketPrice.value, regularPrice.value)
+        setQueryParameters(inputList)
     })
 
     period.addEventListener('change', () => {
@@ -39,6 +40,7 @@
     for (const item of inputList) {
         item.addEventListener('change', () => {
             saveLocalStorageFromInputList(inputList)
+            setQueryParameters(inputList)
         })
     }
 
@@ -51,6 +53,11 @@
     // 曜日Checkbox List 作成
     addItemDayOfWeekInput(dayOfWeekArea)
 
+    // URLパラメータをlocal storageに保存
+    getQueryParametersToLocalStorage()
+
     // Local Storageから各Input要素の値を呼び出し
     getLocalStorageToInputList(inputList)
+
+    await startValueFromEndValue(startDate, endDate, period.value)
 })()
