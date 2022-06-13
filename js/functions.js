@@ -121,13 +121,13 @@ const createResultItem = (ticketPrice, ticketDateNum, regularPrice, appendElemen
     const regularPriceArea = document.createElement("div")
     regularPriceArea.innerHTML = `定期料金 = ${regularPrice}円`
     if (diffPrice < 0)
-        regularPriceArea.innerHTML += ` <span class="u-color-great">切符より${Math.abs(diffPrice)}円お得です</span>`
+        regularPriceArea.innerHTML += `<span>（<span class="u-color-great">${Math.abs(diffPrice)}円お得です</span>）</span>`
 
     const ticketPriceArea = document.createElement("div")
     ticketPriceArea.innerHTML =
         `${ticketPrice * 2}円（往復料金）</span> * ${ticketDateNum}日 = ${calcPeriodTicketPrice}円`
     if (diffPrice > 0)
-        ticketPriceArea.innerHTML += ` <span class="u-color-great">定期より${diffPrice}円お得です</span>`
+        ticketPriceArea.innerHTML += `<span>（<span class="u-color-great">${diffPrice}円お得です</span>）</span>`
 
     div.append(regularPriceArea)
     div.append(ticketPriceArea)
@@ -153,8 +153,7 @@ const createResultTable = (ticketPrice, dayList) => {
                             <th class="u-text-align-right">年</th>
                             <th class="u-text-align-right">月</th>
                             <th class="u-text-align-right">日</th>
-                            <th class="u-text-align-right">曜日</th>                            
-                            <th class="u-text-align-right">祝日</th>                            
+                            <th class="u-text-align-right">曜日</th>                                                        
                             <th class="u-text-align-right">累計</th>
                         </tr>`
 
@@ -168,12 +167,11 @@ const createResultTable = (ticketPrice, dayList) => {
             index += 1
         }
 
-        tr.innerHTML = `<td class="u-text-align-right">${item.isHoliday ? '' : index}</td>
+        tr.innerHTML = `<td class="u-text-align-right">${item.isHoliday ? item.holidayName : index}</td>
                         <td class="u-text-align-right">${item.get('year')}</td>
                         <td class="u-text-align-right">${item.get('month') + 1}</td>
                         <td class="u-text-align-right">${item.get('date')}</td>
-                        <td class="u-text-align-right">${dayOfWeekJapanNameList[item.get('day')]}</td>                        
-                        <td class="u-text-align-right">${item.isHoliday ? item.holidayName : ''}</td>                        
+                        <td class="u-text-align-right">${dayOfWeekJapanNameList[item.get('day')]}</td>                                               
                         <td class="u-text-align-right">${item.isHoliday ? '': ticketPriceSum}</td>`
         tbody.append(tr)
     })
@@ -232,10 +230,12 @@ const startToEndPeriodCalc = async (
         if (thisDay.isSame(endDay)) break
     }
 
+    const trueDateNum = trueDateList.filter(item => !item.isHoliday).length
+
     result.prepend(
         createResultItem(
             ticketPrice,
-            trueDateList.length,
+            trueDateNum,
             regularPrice,
             [createResultTable(ticketPrice, trueDateList)]
         )
