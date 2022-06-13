@@ -5,15 +5,18 @@
      */
     const period = document.getElementById('period')
     const ticketPrice = document.getElementById('ticket-price')
+    const ticketPriceMemo = document.getElementById('ticket-price-memo')
     const regularPrice = document.getElementById('regular-price')
+    const regularPriceMemo = document.getElementById('regular-price-memo')
     const startDate = document.getElementById('start-date')
     const endDate = document.getElementById('end-date')
     const priceCalc = document.getElementById('price-calc')
 
+
     /**
      * @type {(HTMLInputElement)[]}
      */
-    const inputList = [period, ticketPrice, regularPrice, startDate, endDate]
+    const inputList = [period, ticketPrice, ticketPriceMemo, regularPrice, regularPriceMemo, startDate, endDate]
 
     /**
      * @type {HTMLElement}
