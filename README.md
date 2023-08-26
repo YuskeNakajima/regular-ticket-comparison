@@ -5,4 +5,4 @@
 - 曜日を選択可能
 - 祝日は除く
 
-[サイトリンク](https://yuskenakajima.github.io/regular-ticket-comparison/)
+[サイトリンク](https://yuske-nakajima.github.io/regular-ticket-comparison/)
